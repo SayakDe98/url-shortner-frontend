@@ -30,22 +30,23 @@ export default function ShortenerForm({ setResult }: Props) {
   };
 
   return (
-    <div className="input-group">
-      <input
-        className="input"
-        type="text"
-        placeholder="Paste your long URL here"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-      />
+      <form className="input-group">
+        <input
+          className="input"
+          type="text"
+          placeholder="Paste your long URL here"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
 
-      <button
-        className="button"
-        onClick={handleSubmit}
-        disabled={loading}
-      >
-        {loading ? "..." : "Shorten"}
-      </button>
-    </div>
+        <button
+          className="button"
+          onClick={handleSubmit}
+          disabled={loading}
+          type="submit"
+        >
+          {loading ? "..." : "Shorten"}
+        </button>
+      </form>
   );
 }
